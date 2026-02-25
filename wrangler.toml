@@ -1,0 +1,15 @@
+name = "work-tskuy"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+[vars]
+ADMIN_SECRET = "indonesia"
+
+[durable_objects]
+bindings = [
+  { name = "GOLD_ROOM", class_name = "GoldRoom" }
+]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["GoldRoom"]
