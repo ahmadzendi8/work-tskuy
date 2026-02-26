@@ -71,8 +71,14 @@ th.profit,td.profit{width:155px;min-width:145px;max-width:165px;text-align:left;
 .dark-mode .profit-btn.active{background:#ffb300;color:#222;border-color:#ffb300}
 .filter-wrap{display:flex;align-items:center}
 .tradingview-wrapper{height:100%;width:100%;overflow:hidden}
-.chart-header{display:flex;justify-content:space-between;align-items:center;margin-top:0;margin-bottom:10px}
-.chart-header h3{margin:0}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-top:0;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.chart-title-wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.chart-title-wrap h3{margin:0}
+.chart-header-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.spread-label{font-size:0.95em;font-weight:bold;color:#ff1744}
+.spread-num{font-size:1.1em;padding:2px 8px;background:#ff1744;color:#fff;border-radius:4px;margin-left:4px}
+.dark-mode .spread-label{color:#00E124}
+.dark-mode .spread-num{background:#00E124;color:#181a1b}
 .limit-label{font-size:0.95em;font-weight:bold;color:#ff1744}
 .limit-label .limit-num{font-size:1.1em;padding:2px 8px;background:#ff1744;color:#fff;border-radius:4px;margin-left:4px}
 .dark-mode .limit-label{color:#00E124}
@@ -149,7 +155,9 @@ h3{font-size:1.05em;margin:15px 0 8px}
 .profit-order-btns{display:flex}
 .profit-btn{padding:6px 12px;font-size:13px}
 .chart-header{flex-direction:row;gap:10px}
-.chart-header h3{font-size:1em}
+.chart-title-wrap h3{font-size:1em}
+.spread-label{font-size:0.9em}
+.spread-num{font-size:1.05em;padding:2px 7px}
 .limit-label{font-size:0.9em}
 .limit-label .limit-num{font-size:1.05em;padding:2px 7px}
 .bottom-section{flex-direction:row;gap:15px}
@@ -192,7 +200,9 @@ h3{font-size:0.95em;margin:12px 0 8px}
 .profit-order-btns{display:flex}
 .profit-btn{padding:5px 10px;font-size:12px}
 .chart-header{flex-direction:row;gap:8px}
-.chart-header h3{font-size:0.95em}
+.chart-title-wrap h3{font-size:0.95em}
+.spread-label{font-size:0.85em}
+.spread-num{font-size:1em;padding:2px 6px}
 .limit-label{font-size:0.85em}
 .bottom-section{flex-direction:column;gap:18px;margin-bottom:55px}
 .calendar-box{width:100%}
@@ -236,7 +246,9 @@ h3{font-size:0.92em;margin:12px 0 6px}
 #tabel thead th.profit,#tabel tbody td.profit{width:118px!important;min-width:113px!important;max-width:123px!important;padding-left:4px!important;padding-right:4px!important}
 .profit-order-btns{display:flex}
 .profit-btn{padding:5px 9px;font-size:11px}
-.chart-header h3{font-size:0.9em}
+.chart-title-wrap h3{font-size:0.9em}
+.spread-label{font-size:0.82em}
+.spread-num{font-size:0.95em;padding:1px 5px}
 .limit-label{font-size:0.82em}
 .limit-label .limit-num{font-size:1em;padding:1px 6px}
 .bottom-section{flex-direction:column;gap:15px;margin-bottom:50px}
@@ -286,7 +298,9 @@ h3{font-size:0.88em;margin:10px 0 6px}
 #tabel thead th.profit,#tabel tbody td.profit{width:110px!important;min-width:105px!important;max-width:115px!important;padding-left:3px!important;padding-right:3px!important}
 .profit-order-btns{display:flex}
 .profit-btn{padding:4px 7px;font-size:10px}
-.chart-header h3{font-size:0.85em}
+.chart-title-wrap h3{font-size:0.85em}
+.spread-label{font-size:0.78em}
+.spread-num{font-size:0.9em;padding:1px 4px}
 .limit-label{font-size:0.78em}
 .limit-label .limit-num{font-size:0.95em;padding:1px 5px}
 .bottom-section{flex-direction:column;gap:15px;margin-bottom:48px}
@@ -333,7 +347,10 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <div class="container-flex">
 <div class="chart-wrap">
 <div class="chart-header">
+<div class="chart-title-wrap">
 <h3>Chart Harga Emas (XAU/USD)</h3>
+<span class="spread-label">Spread:<span class="spread-num" id="spreadValue">-</span></span>
+</div>
 <span class="limit-label">Limit Bulan ini:<span class="limit-num" id="limitBulan">88888</span></span>
 </div>
 <div class="card card-chart">
@@ -440,6 +457,17 @@ return n.toFixed(4).replace('.',',');
 function updateCalcRates(){
 document.getElementById('buyRateDisplay').textContent=latestBuyRate?formatRupiahCalc(latestBuyRate):'-';
 document.getElementById('sellRateDisplay').textContent=latestSellRate?formatRupiahCalc(latestSellRate):'-';
+}
+
+function updateSpreadDisplay(){
+var spreadEl=document.getElementById('spreadValue');
+if(latestBuyRate&&latestSellRate){
+var spread=((latestSellRate-latestBuyRate)/latestBuyRate*100).toFixed(2);
+var prefix=parseFloat(spread)>=0?'+':'';
+spreadEl.textContent=prefix+spread+'%';
+}else{
+spreadEl.textContent='-';
+}
 }
 
 function setupCalcListeners(){
@@ -686,6 +714,7 @@ if(h.length>0&&h[0].buying_rate_raw&&h[0].selling_rate_raw){
 latestBuyRate=h[0].buying_rate_raw;
 latestSellRate=h[0].selling_rate_raw;
 updateCalcRates();
+updateSpreadDisplay();
 }
 renderTable();
 }
