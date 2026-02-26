@@ -119,6 +119,8 @@ th.profit,td.profit{width:155px;min-width:145px;max-width:165px;text-align:left;
 .dark-mode .calc-input-group input:focus{border-color:#ffb300;box-shadow:0 0 0 3px rgba(255,179,0,0.15)}
 .calc-input-group input::placeholder{color:#999}
 .dark-mode .calc-input-group input::placeholder{color:#666}
+.chart-wrap{flex:1;min-width:400px}
+.usd-wrap{flex-shrink:0}
 @media(min-width:768px) and (max-width:1024px){
 body{padding:15px;padding-bottom:50px}
 h2{font-size:1.15em}
@@ -171,6 +173,7 @@ h3{font-size:0.95em;margin:12px 0 8px}
 #jam{font-size:1.8em;margin-bottom:6px}
 .theme-toggle-btn{width:38px;height:38px;font-size:1.3em}
 .container-flex{flex-direction:column;gap:15px}
+.chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
 .card-usd,.card-chart{width:100%!important;max-width:100%!important;min-width:0!important}
 .card-usd{height:auto;min-height:300px}
 .card-chart{height:360px}
@@ -212,6 +215,7 @@ h3{font-size:0.92em;margin:12px 0 6px}
 #jam{font-size:1.5em;margin-bottom:5px}
 .theme-toggle-btn{width:36px;height:36px;font-size:1.2em}
 .container-flex{flex-direction:column;gap:12px}
+.chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
 .card-usd,.card-chart{width:100%!important;max-width:100%!important;min-width:0!important}
 .card-usd{height:auto;min-height:280px}
 .card-chart{height:340px}
@@ -261,6 +265,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 #jam{font-size:1.3em;margin-bottom:4px}
 .theme-toggle-btn{width:34px;height:34px;font-size:1.1em}
 .container-flex{flex-direction:column;gap:10px}
+.chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
 .card-usd,.card-chart{width:100%!important;max-width:100%!important;min-width:0!important}
 .card-usd{height:auto;min-height:260px}
 .card-chart{height:300px}
@@ -326,7 +331,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 </table>
 </div>
 <div class="container-flex">
-<div style="flex:1;min-width:400px">
+<div class="chart-wrap">
 <div class="chart-header">
 <h3>Chart Harga Emas (XAU/USD)</h3>
 <span class="limit-label">Limit Bulan ini:<span class="limit-num" id="limitBulan">88888</span></span>
@@ -335,7 +340,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <div class="tradingview-wrapper" id="tradingview_chart"></div>
 </div>
 </div>
-<div>
+<div class="usd-wrap">
 <h3 style="margin-top:0">Harga USD/IDR Google Finance</h3>
 <div class="card card-usd">
 <p>Harga saat ini: <span id="currentPrice" class="loading-text">Memuat data...</span></p>
