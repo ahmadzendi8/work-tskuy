@@ -348,7 +348,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <div class="chart-wrap">
 <div class="chart-header">
 <div class="chart-title-wrap">
-<h3>Chart Harga Emas (XAU/USD)</h3>
+<h3>Chart Harga XAU/USD</h3>
 <span class="spread-label">Spread:<span class="spread-num" id="spreadValue">-</span></span>
 </div>
 <span class="limit-label">Limit Bulan ini:<span class="limit-num" id="limitBulan">88888</span></span>
