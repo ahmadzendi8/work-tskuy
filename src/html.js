@@ -454,6 +454,11 @@ if(isNaN(n)||n===0)return'';
 return n.toFixed(4).replace('.',',');
 }
 
+function swapNumFormat(s){
+if(!s)return s;
+return s.replace(/,/g,'#T#').replace(/\\./g,',').replace(/#T#/g,'.');
+}
+
 function updateCalcRates(){
 document.getElementById('buyRateDisplay').textContent=latestBuyRate?formatRupiahCalc(latestBuyRate):'-';
 document.getElementById('sellRateDisplay').textContent=latestSellRate?formatRupiahCalc(latestSellRate):'-';
@@ -732,14 +737,14 @@ function prs(s){return parseFloat(s.trim().replace(/\\./g,'').replace(',','.'));
 var r=h.slice().reverse();
 var icon="\\u2796";
 if(r.length>1){var n=prs(r[0].price),pr2=prs(r[1].price);icon=n>pr2?"\\uD83D\\uDE80":n<pr2?"\\uD83D\\uDD3B":"\\u2796";}
-c.innerHTML=r[0].price+" "+icon;
+c.innerHTML=swapNumFormat(r[0].price)+" "+icon;
 var html='';
 for(var i=0;i<r.length;i++){
 var ic="\\u2796";
 if(i===0&&r.length>1){var nn=prs(r[0].price),pp=prs(r[1].price);ic=nn>pp?"\\uD83D\\uDFE2":nn<pp?"\\uD83D\\uDD34":"\\u2796";}
 else if(i<r.length-1){var nn2=prs(r[i].price),nx=prs(r[i+1].price);ic=nn2>nx?"\\uD83D\\uDFE2":nn2<nx?"\\uD83D\\uDD34":"\\u2796";}
 else if(r.length>1){var nn3=prs(r[i].price),pp2=prs(r[i-1].price);ic=nn3<pp2?"\\uD83D\\uDD34":nn3>pp2?"\\uD83D\\uDFE2":"\\u2796";}
-html+='<li>'+r[i].price+' <span class="time">('+r[i].time+')</span> '+ic+'</li>';
+html+='<li>'+swapNumFormat(r[i].price)+' <span class="time">('+r[i].time+')</span> '+ic+'</li>';
 }
 p.innerHTML=html;
 }
