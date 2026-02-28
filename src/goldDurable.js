@@ -111,10 +111,10 @@ export class GoldRoom {
       transaction_display: "Beli: " + buyFmt + "<br>Jual: " + sellFmt + "<br>" + diffDisplay,
       created_at: h.created_at,
       jt10: this.calcProfit(h, 10000000, 9669000),
-      jt20: this.calcProfit(h, 20000000, 19330000),
-      jt30: this.calcProfit(h, 30000000, 28995000),
-      jt40: this.calcProfit(h, 40000000, 38660000),
-      jt50: this.calcProfit(h, 50000000, 48325000),
+      jt30: this.calcProfit(h, 30000000, 29004000),
+      jt40: this.calcProfit(h, 40000000, 38672000),
+      jt50: this.calcProfit(h, 50000000, 48340000),
+      jt60: this.calcProfit(h, 60000000, 58005000),
     };
   }
 
