@@ -335,10 +335,10 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <th class="waktu">Waktu</th>
 <th class="transaksi">Data Transaksi</th>
 <th class="profit" id="thP1">Est.cuan 10JT &#10138; gr</th>
-<th class="profit" id="thP2">Est.cuan 20JT &#10138; gr</th>
-<th class="profit" id="thP3">Est.cuan 30JT &#10138; gr</th>
-<th class="profit" id="thP4">Est.cuan 40JT &#10138; gr</th>
-<th class="profit" id="thP5">Est.cuan 50JT &#10138; gr</th>
+<th class="profit" id="thP2">Est.cuan 30JT &#10138; gr</th>
+<th class="profit" id="thP3">Est.cuan 40JT &#10138; gr</th>
+<th class="profit" id="thP4">Est.cuan 50JT &#10138; gr</th>
+<th class="profit" id="thP5">Est.cuan 60JT &#10138; gr</th>
 </tr>
 </thead>
 <tbody></tbody>
