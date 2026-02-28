@@ -421,7 +421,7 @@ var isProcessing=false;
 var latestHistory=[];
 var isFirstRender=true;
 var savedPriority=localStorage.getItem('profitPriority');
-var profitPriority=(savedPriority&&['jt10','jt20','jt30','jt40','jt50'].indexOf(savedPriority)!==-1)?savedPriority:'jt10';
+var profitPriority=(savedPriority&&['jt10','jt30','jt40','jt50','jt60'].indexOf(savedPriority)!==-1)?savedPriority:'jt10';
 var headerLabels={'jt10':'Est.cuan 10JT \\u27BA gr','jt30':'Est.cuan 30JT \\u27BA gr','jt40':'Est.cuan 40JT \\u27BA gr','jt50':'Est.cuan 50JT \\u27BA gr','jt60':'Est.cuan 60JT \\u27BA gr'};
 var blinkTimeout=null;
 var latestBuyRate=0;
