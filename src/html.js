@@ -598,7 +598,7 @@ isCalcUpdating=false;
 setupCalcListeners();
 
 function getOrderedProfitKeys(){
-var all=['jt10','jt20','jt30','jt40','jt50'];
+var all=['jt10','jt30','jt40','jt50','jt60'];
 var result=[profitPriority];
 all.forEach(function(k){if(k!==profitPriority)result.push(k);});
 return result;
