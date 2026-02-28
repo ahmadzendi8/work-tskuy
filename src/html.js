@@ -650,7 +650,7 @@ initComplete:function(){
 var filterDiv=$('.dataTables_filter');
 var activeVal=profitPriority.replace('jt','');
 var btnsHtml='<div class="profit-order-btns" id="profitOrderBtns">';
-['10','20','30','40','50'].forEach(function(v){
+['10','30','40','50','60'].forEach(function(v){
 btnsHtml+='<button class="profit-btn'+(activeVal===v?' active':'')+'" data-val="'+v+'">'+v+'</button>';
 });
 btnsHtml+='</div>';
