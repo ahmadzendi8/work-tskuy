@@ -127,7 +127,7 @@ th.profit,td.profit{width:155px;min-width:145px;max-width:165px;text-align:left;
 .dark-mode .calc-input-group input::placeholder{color:#666}
 .chart-wrap{flex:1;min-width:400px}
 .usd-wrap{flex-shrink:0}
-.promo-btn{padding:5px 12px;border:2px solid #ff1744;background:linear-gradient(135deg,#ff1744,#ff5252);color:#fff;border-radius:20px;font-size:0.9em;cursor:pointer;font-weight:bold;transition:all .3s;margin-left:10px;text-transform:uppercase;letter-spacing:1px;box-shadow:0 2px 8px rgba(255,23,68,0.3)}
+.promo-btn{padding:5px 12px;border:2px solid #ff1744;background:linear-gradient(135deg,#ff1744,#ff5252);color:#fff;border-radius:20px;font-size:0.9em;cursor:pointer;font-weight:bold;transition:all .3s;text-transform:uppercase;letter-spacing:1px;box-shadow:0 2px 8px rgba(255,23,68,0.3)}
 .promo-btn:hover{transform:scale(1.08);box-shadow:0 4px 15px rgba(255,23,68,0.5);background:linear-gradient(135deg,#ff5252,#ff1744)}
 .promo-btn:active{transform:scale(0.95)}
 .dark-mode .promo-btn{background:linear-gradient(135deg,#00E124,#00ff41);border-color:#00E124;color:#181a1b;box-shadow:0 2px 8px rgba(0,225,36,0.3)}
@@ -221,7 +221,7 @@ h3{font-size:0.95em;margin:12px 0 8px}
 .spread-label{font-size:0.85em}
 .spread-num{font-size:1em;padding:2px 6px}
 .limit-label{font-size:0.85em}
-.promo-btn{padding:4px 10px;font-size:0.8em;margin-left:8px}
+.promo-btn{padding:4px 10px;font-size:0.8em}
 .promo-modal img{max-height:75vh}
 .promo-close{width:34px;height:34px;font-size:1.2em;top:-10px;right:-10px}
 .bottom-section{flex-direction:column;gap:18px;margin-bottom:55px}
@@ -271,7 +271,7 @@ h3{font-size:0.92em;margin:12px 0 6px}
 .spread-num{font-size:0.95em;padding:1px 5px}
 .limit-label{font-size:0.82em}
 .limit-label .limit-num{font-size:1em;padding:1px 6px}
-.promo-btn{padding:3px 8px;font-size:0.75em;margin-left:6px;border-radius:15px}
+.promo-btn{padding:3px 8px;font-size:0.75em;border-radius:15px}
 .promo-modal img{max-height:70vh}
 .promo-close{width:32px;height:32px;font-size:1.1em;top:-8px;right:-8px}
 .bottom-section{flex-direction:column;gap:15px;margin-bottom:50px}
@@ -326,7 +326,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 .spread-num{font-size:0.9em;padding:1px 4px}
 .limit-label{font-size:0.78em}
 .limit-label .limit-num{font-size:0.95em;padding:1px 5px}
-.promo-btn{padding:3px 7px;font-size:0.7em;margin-left:5px;border-radius:12px;letter-spacing:0.5px}
+.promo-btn{padding:3px 7px;font-size:0.7em;border-radius:12px;letter-spacing:0.5px}
 .promo-modal{max-width:98%;max-height:98%}
 .promo-modal img{max-height:65vh;border-radius:8px}
 .promo-close{width:30px;height:30px;font-size:1em;top:-8px;right:-8px;border-width:2px}
@@ -351,6 +351,7 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <div class="title-wrap">
 <h2>Harga Emas Treasury  ➺ </h2>
 <a href="https://t.me/+FLtJjyjVV8xlM2E1" target="_blank" class="tele-link" title="Join Telegram"><span class="tele-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span><span class="tele-text">Telegram</span></a>
+<button class="promo-btn" id="promoBtn" onclick="openPromo()">&#127873; Promo</button>
 </div>
 <button class="theme-toggle-btn" id="themeBtn" onclick="toggleTheme()" title="Ganti Tema">&#127769;</button>
 </div>
@@ -377,7 +378,6 @@ h3{font-size:0.88em;margin:10px 0 6px}
 <div class="chart-title-wrap">
 <h3>Chart Harga XAU/USD</h3>
 <span class="spread-label">Spread:<span class="spread-num" id="spreadValue">-</span></span>
-<button class="promo-btn" id="promoBtn" onclick="openPromo()">&#127873; Promo</button>
 </div>
 <span class="limit-label">Limit Bulan ini:<span class="limit-num" id="limitBulan">88888</span></span>
 </div>
