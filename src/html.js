@@ -12,24 +12,19 @@ h2{margin:0 0 2px}
 h3{margin:20px 0 10px}
 .header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:2px}
 .title-wrap{display:flex;align-items:center;gap:10px}
-.tele-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:transform .2s}
-.tele-link:hover{transform:scale(1.05)}
+.tele-link,.wa-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:transform .2s}
+.tele-link:hover,.wa-link:hover{transform:scale(1.05)}
 .tele-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#0088cc;color:#fff;border-radius:50%;transition:background .3s}
 .tele-link:hover .tele-icon{background:#006699}
-.tele-text{font-size:0.95em;font-weight:bold;color:#ff1744}
+.tele-text,.wa-text{font-size:0.95em;font-weight:bold;color:#ff1744}
 .dark-mode .tele-icon{background:#29b6f6}
 .dark-mode .tele-link:hover .tele-icon{background:#0288d1}
-.dark-mode .tele-text{color:#00E124}
-.wa-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:transform .2s;margin-left:12px;vertical-align:middle}
-.wa-link:hover{transform:scale(1.05)}
+.dark-mode .tele-text,.dark-mode .wa-text{color:#00E124}
 .wa-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#25D366;color:#fff;border-radius:50%;transition:background .3s}
 .wa-link:hover .wa-icon{background:#128C7E}
-.wa-text{font-size:0.95em;font-weight:bold;color:#25D366}
 .dark-mode .wa-icon{background:#25D366}
 .dark-mode .wa-link:hover .wa-icon{background:#128C7E}
-.dark-mode .wa-text{color:#25D366}
-#jam{font-size:2em;color:#ff1744;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;flex-wrap:wrap;gap:0}
-#jam .jam-text{margin-right:0}
+#jam{font-size:2em;color:#ff1744;font-weight:bold;margin-bottom:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 table.dataTable{width:100%!important;border-collapse:collapse}
 table.dataTable thead th{font-weight:bold;white-space:nowrap;padding:10px 8px;font-size:1em;border-bottom:2px solid #ddd}
 table.dataTable tbody td{padding:8px 6px;white-space:nowrap;border-bottom:1px solid #eee;font-size:1em}
@@ -39,7 +34,7 @@ th.profit,td.profit{width:155px;min-width:145px;max-width:165px;text-align:left;
 .theme-toggle-btn{padding:0;border:none;border-radius:50%;background:#222;color:#fff;cursor:pointer;font-size:1.5em;width:44px;height:44px;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .theme-toggle-btn:hover{background:#444}
 .dark-mode{background:#181a1b!important;color:#e0e0e0!important}
-.dark-mode #jam .jam-text{color:#ffb300!important}
+.dark-mode #jam{color:#ffb300!important}
 .dark-mode table.dataTable,.dark-mode table.dataTable thead th{background:#23272b!important;color:#e0e0e0!important}
 .dark-mode table.dataTable tbody td{background:#23272b;color:#e0e0e0!important;border-bottom:1px solid #333}
 .dark-mode table.dataTable thead th{color:#ffb300!important;border-bottom:2px solid #444}
@@ -155,15 +150,10 @@ body{padding:15px;padding-bottom:50px}
 h2{font-size:1.15em}
 h3{font-size:1.05em;margin:15px 0 8px}
 .header{margin-bottom:4px}
-.tele-icon{width:30px;height:30px}
-.tele-icon svg{width:16px;height:16px}
-.tele-text{font-size:0.9em}
-.wa-icon{width:30px;height:30px}
-.wa-icon svg{width:16px;height:16px}
-.wa-text{font-size:0.9em}
-.wa-link{margin-left:10px}
-#jam{font-size:2em}
-#jam .jam-text{margin-bottom:0}
+.tele-icon,.wa-icon{width:30px;height:30px}
+.tele-icon svg,.wa-icon svg{width:16px;height:16px}
+.tele-text,.wa-text{font-size:0.9em}
+#jam{font-size:2em;margin-bottom:8px;gap:10px}
 .theme-toggle-btn{width:42px;height:42px;font-size:1.4em}
 .container-flex{flex-direction:row;gap:15px}
 .card-usd{width:220px;height:350px}
@@ -206,14 +196,10 @@ body{padding:12px;padding-bottom:50px}
 h2{font-size:1.05em}
 h3{font-size:0.95em;margin:12px 0 8px}
 .header{margin-bottom:2px}
-.tele-icon{width:28px;height:28px}
-.tele-icon svg{width:15px;height:15px}
-.tele-text{font-size:0.85em}
-.wa-icon{width:28px;height:28px}
-.wa-icon svg{width:15px;height:15px}
-.wa-text{font-size:0.85em}
-.wa-link{margin-left:8px}
-#jam{font-size:1.8em}
+.tele-icon,.wa-icon{width:28px;height:28px}
+.tele-icon svg,.wa-icon svg{width:15px;height:15px}
+.tele-text,.wa-text{font-size:0.85em}
+#jam{font-size:1.8em;margin-bottom:6px;gap:8px}
 .theme-toggle-btn{width:38px;height:38px;font-size:1.3em}
 .container-flex{flex-direction:column;gap:15px}
 .chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
@@ -257,14 +243,10 @@ h2{font-size:1em}
 h3{font-size:0.92em;margin:12px 0 6px}
 .header{margin-bottom:2px}
 .title-wrap{gap:6px}
-.tele-icon{width:26px;height:26px}
-.tele-icon svg{width:14px;height:14px}
-.tele-text{font-size:0.8em}
-.wa-icon{width:26px;height:26px}
-.wa-icon svg{width:14px;height:14px}
-.wa-text{font-size:0.8em}
-.wa-link{margin-left:6px}
-#jam{font-size:1.5em}
+.tele-icon,.wa-icon{width:26px;height:26px}
+.tele-icon svg,.wa-icon svg{width:14px;height:14px}
+.tele-text,.wa-text{font-size:0.8em}
+#jam{font-size:1.5em;margin-bottom:5px;gap:6px}
 .theme-toggle-btn{width:36px;height:36px;font-size:1.2em}
 .container-flex{flex-direction:column;gap:12px}
 .chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
@@ -316,14 +298,10 @@ h2{font-size:0.9em}
 h3{font-size:0.88em;margin:10px 0 6px}
 .header{margin-bottom:1px}
 .title-wrap{gap:5px}
-.tele-icon{width:24px;height:24px}
-.tele-icon svg{width:13px;height:13px}
-.tele-text{font-size:0.75em}
-.wa-icon{width:24px;height:24px}
-.wa-icon svg{width:13px;height:13px}
-.wa-text{font-size:0.75em}
-.wa-link{margin-left:5px}
-#jam{font-size:1.3em}
+.tele-icon,.wa-icon{width:24px;height:24px}
+.tele-icon svg,.wa-icon svg{width:13px;height:13px}
+.tele-text,.wa-text{font-size:0.75em}
+#jam{font-size:1.3em;margin-bottom:4px;gap:5px}
 .theme-toggle-btn{width:34px;height:34px;font-size:1.1em}
 .container-flex{flex-direction:column;gap:10px}
 .chart-wrap,.usd-wrap{width:100%!important;min-width:0!important;flex:none!important}
@@ -487,8 +465,6 @@ var blinkTimeout=null;
 var latestBuyRate=0;
 var latestSellRate=0;
 var isCalcUpdating=false;
-
-var waLinkHtml='<a href="https://chat.whatsapp.com/LD4zZN9coDj4h4g8AMnYTR?mode=gi_t" target="_blank" class="wa-link" title="WhatsApp"><span class="wa-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span class="wa-text">WhatsApp</span></a>';
 
 var promoOverlay=document.getElementById('promoOverlay');
 var promoClose=document.getElementById('promoClose');
@@ -891,7 +867,8 @@ var n=new Date();
 var days=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
 var hari=days[n.getDay()];
 var jam=n.toLocaleTimeString('id-ID',{hour12:false});
-document.getElementById("jam").innerHTML='<span class="jam-text">'+hari+", "+jam+" WIB</span>"+waLinkHtml;
+var waHtml='<a href="https://chat.whatsapp.com/LD4zZN9coDj4h4g8AMnYTR?mode=gi_t" target="_blank" class="wa-link" title="WhatsApp"><span class="wa-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span><span class="wa-text">WhatsApp</span></a>';
+document.getElementById("jam").innerHTML=hari+", "+jam+" WIB "+waHtml;
 }
 setInterval(updateJam,1000);
 updateJam();
